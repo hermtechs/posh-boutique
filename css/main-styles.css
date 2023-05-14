@@ -3,9 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* nav{
+  position: fixed;
+
+} */
+header{
+  background: #417393;
+  padding: 0.4rem 0.6rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+/* nav start */
 .wrapper{
     position: fixed;
-    top: 0;
+    top: -23px;
     left: 0;
     height: 100%;
     width: 100%;
@@ -13,23 +26,24 @@
     /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
     /* clip-path: circle(25px at calc(0% + 45px) 45px); */
-    background: #000;
+    background: #417393;
     clip-path: circle(25px at calc(100% - 45px) 45px);
     transition: all 0.3s ease-in-out;
+    z-index: 1000;
   }
   #active:checked ~ .wrapper{
     clip-path: circle(75%);
   }
   .menu-btn{
-    position: absolute;
+    position: fixed;
     z-index: 2;
     right: 20px;
     /* left: 20px; */
-    top: 20px;
-    height: 50px;
-    width: 50px;
+    top: 6px;
+    height: 40px;
+    width: 40px;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     border-radius: 50%;
     font-size: 20px;
     color: #fff;
@@ -37,7 +51,8 @@
     /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
     /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
-    background: #000;
+    background: #5287a8;
+    z-index: 1001;
     transition: all 0.3s ease-in-out;
   }
   #active:checked ~ .menu-btn{
@@ -65,7 +80,7 @@
     padding: 5px 30px;
     color: #fff;
     border-radius: 50px;
-    background: #000;
+    background: #487d9f;
     position: relative;
     line-height: 50px;
     transition: all 0.3s ease;
@@ -95,24 +110,6 @@
   input[type="checkbox"]{
     display: none;
   }
-  .content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    text-align: center;
-    width: 100%;
-    color: #202020;
-  }
-  .content .title{
-    font-size: 40px;
-    font-weight: 700;
-  }
-  .content p{
-    font-size: 35px;
-    font-weight: 600;
-  }
   
   @keyframes rotate {
     0%{
@@ -122,4 +119,27 @@
       filter: hue-rotate(360deg);
     }
   }
-  
+  /* nav end */
+
+
+  /* HERO SECTION START */
+  .hero-section{
+    padding: 1rem 0.3rem;
+    position: relative;
+    z-index: 200;
+    background: #ddd;
+  }
+
+  /* HERO SECTION END */
+  main{
+    padding-top: 3.1rem;
+  }
+  .featured h5{
+    color: #6c757d;
+  }
+  .categories h6{
+    color: #6c757d;
+  }
+  .section-title span{
+    color: #000;
+  }
