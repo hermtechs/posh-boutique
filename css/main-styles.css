@@ -124,7 +124,7 @@ header{
 
   /* HERO SECTION START */
   .hero-section{
-    padding: 1rem 0.3rem;
+    padding: 1rem 0.1rem;
     position: relative;
     z-index: 200;
     background: #ddd;
@@ -141,5 +141,14 @@ header{
     color: #6c757d;
   }
   .section-title span{
+    color: #000;
+  }
+  .product-name{
+    color: #000;
+  }
+  .products h5 ,.featured-products h5{
+    color: #000;
+  }
+  small{
     color: #000;
   }
