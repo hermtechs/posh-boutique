@@ -152,3 +152,18 @@ header{
   small{
     color: #000;
   }
+  .order-product{
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #ffff;
+    background: rgb(64, 27, 226);
+    padding: 0.4rem 1rem;
+    border-radius: 1.2rem;
+    transition:  100ms ease-in;
+  }
+  .order-product i{
+    color: #15fb30;
+  }
+  .order-product:hover{
+    transform: scale(1.07) !important;
+  }
