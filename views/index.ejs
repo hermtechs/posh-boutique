@@ -11,8 +11,8 @@
         <!-- main css file -->
     <link rel="stylesheet" href="/public/css/main-styles.css">
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="public/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 </head>
 <body>
  <header>
@@ -78,22 +78,16 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="product-offer mb-30" style="height: 200px;">
-                <img class="img-fluid" src="public/img/offer-1.jpg" alt="">
+            <% offers.forEach(offer=>{ %>
+              <div class="product-offer mb-30" style="height: 200px;">
+                <img class="img-fluid" src="<%=offer.imageUrl %>" alt="">
                 <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
+                    <h6 class="text-white text-uppercase">Save <%=offer.offerValue %></h6>
                     <h3 class="text-white mb-3">Special Offer</h3>
                     <a href="" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
-            <div class="product-offer mb-30" style="height: 200px;">
-                <img class="img-fluid" src="public/img/offer-2.jpg" alt="">
-                <div class="offer-text">
-                    <h6 class="text-white text-uppercase">Save 20%</h6>
-                    <h3 class="text-white mb-3">Special Offer</h3>
-                    <a href="" class="btn btn-primary">Shop Now</a>
-                </div>
-            </div>
+            <% }) %>
         </div>
     </div>
 </div>
@@ -430,26 +424,18 @@
     <!-- Offer Start -->
     <div class="container-fluid pt-5 pb-3">
         <div class="row px-xl-5">
-            <div class="col-md-6">
-                <div class="product-offer mb-30" style="height: 300px;">
-                    <img class="img-fluid" src="public/img/offer-1.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+            <% offers.forEach(offer=> {%>
+                <div class="col-md-6">
+                    <div class="product-offer mb-30" style="height: 300px;">
+                        <img class="img-fluid" src="<%=offer.imageUrl  %>" alt="">
+                        <div class="offer-text">
+                            <h6 class="text-white text-uppercase">Save <%=offer.offerValue  %></h6>
+                            <h3 class="text-white mb-3">Special Offer</h3>
+                            <a href="" class="btn btn-primary">Shop Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="product-offer mb-30" style="height: 300px;">
-                    <img class="img-fluid" src="public/img/offer-2.jpg" alt="">
-                    <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
-                    </div>
-                </div>
-            </div>
+             <%  }) %>
         </div>
     </div>
     <!-- Offer End -->
@@ -586,9 +572,9 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="/public/"></script>
+    <!-- <script src="/public/js/main.js"></script> -->
     <script src="/public/lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <script src="/public/./js/index.js"></script>
+    <script src="/public/js/index.js"></script>
 </body>
 </html>
