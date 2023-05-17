@@ -78,7 +78,8 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <% offers.forEach(offer=>{ %>
+            <% //console.log(offers) %>
+            <% offers[0].forEach(offer=>{ %>
               <div class="product-offer mb-30" style="height: 200px;">
                 <img class="img-fluid" src="<%=offer.imageUrl %>" alt="">
                 <div class="offer-text">
@@ -291,130 +292,33 @@
     </div>
     <!-- Categories End -->
 </section>
-<section class="featured-products">
-    
+<section class="featured-products">    
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
         <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <% featuredProducts[0].forEach(prod=>{ %>
+                <% const productId = prod.sys.id %>
+                <% const {productName,productPhoto,productCurrentPrice,productOldPrice}=prod.fields ;%>
+                 <% const { url } = productPhoto.fields.file; %>
+                 <% const imageUrl = `https:${url}` %>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%productId %>">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="<%=imageUrl  %>" alt="">
                     </div>
                     <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
+                        <h6 class="h6 text-decoration-none text-truncate product-name"><%=productName %></h6>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-2.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>shs.<%=productCurrentPrice  %></h5><h6 class="text-muted ml-2"><del><%=productOldPrice %></del></h6>
                         </div>
                     <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-3.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
+          <%  }) %>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-4.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-5.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-6.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-7.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-8.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Products End -->
@@ -424,7 +328,7 @@
     <!-- Offer Start -->
     <div class="container-fluid pt-5 pb-3">
         <div class="row px-xl-5">
-            <% offers.forEach(offer=> {%>
+            <% offers[0].forEach(offer=> {%>
                 <div class="col-md-6">
                     <div class="product-offer mb-30" style="height: 300px;">
                         <img class="img-fluid" src="<%=offer.imageUrl  %>" alt="">
@@ -440,133 +344,38 @@
     </div>
     <!-- Offer End -->
 </section>
-<section class="products">
-     <!-- Products Start -->
-     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
-        <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-1.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-2.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+<section class="products">    
+        <!-- Products Start -->
+        <div class="container-fluid pt-5 pb-3">
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
+            <div class="row px-xl-5">
+                <% recentProducts[0].forEach(prod=>{ %>
+                    <% const productId = prod.sys.id %>
+                    <% const {productName,productPhoto,productCurrentPrice,productOldPrice}=prod.fields ;%>
+                     <% const { url } = productPhoto.fields.file; %>
+                     <% const imageUrl = `https:${url}` %>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%productId %>">
+                    <div class="product-item bg-light mb-4">
+                        <div class="product-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="<%=imageUrl  %>" alt="">
                         </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-3.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        <div class="text-center py-4">
+                            <h6 class="h6 text-decoration-none text-truncate product-name"><%=productName %></h6>
+                            <div class="d-flex align-items-center justify-content-center mt-2">
+                                <h5>shs.<%=productCurrentPrice  %></h5><h6 class="text-muted ml-2"><del><%=productOldPrice %></del></h6>
+                            </div>
+                        <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
+    
                         </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-4.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-5.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-6.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-7.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="public/img/product-8.jpg" alt="">
-                    </div>
-                    <div class="text-center py-4">
-                        <h6 class="h6 text-decoration-none text-truncate product-name">Product Name Goes Here</h6>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
-                    </div>
-                </div>
+              <%  }) %>
+    
             </div>
         </div>
-    </div>
-    <!-- Products End -->
-</section>
+        <!-- Products End -->
+    </section>
 </main> 
 
     <!-- JavaScript Libraries -->

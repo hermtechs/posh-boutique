@@ -21,6 +21,9 @@ const client = contentful.createClient({
 });
 
 const allEntryIdsArray = [];
+let featuredProducts = [];
+let offers = [];
+let recentProducts = [];
 
 client
   .getEntries()
@@ -47,15 +50,50 @@ function getRequestforEachRoute() {
 const updateOffers = async () => {
   await client.getEntries({ content_type: "offers2" }).then((response) => {
     const firstTwoItems = response.items.slice(0, 2);
-    const offers = firstTwoItems.map((item) => {
+    const offersItems = firstTwoItems.map((item) => {
       const { offerValue, backgroundImage } = item.fields;
       const { url } = backgroundImage.fields.file;
       const imageUrl = `https:${url}`;
       return { offerValue, imageUrl };
     });
-    app.get("/", (req, res) => {
-      res.render("index", { offers });
-    });
+
+    offers.push(offersItems);
   });
 };
-updateOffers();
+// updateOffers();
+
+//fetching featured products & recent Products
+const fetchProducts = async () => {
+  await client
+    .getEntries({ content_type: "products" })
+    .then((response) => {
+      const products = response.items;
+
+      //filtering products tagged featured in contentful
+      const filterFeatured = products.filter(
+        (prod) => prod.fields.featured == true
+      );
+      featuredProducts.push(filterFeatured);
+
+      //filtering products tagged not featured
+      const filterRecent = products.filter(
+        (prod) => prod.fields.featured == false
+      );
+      recentProducts.push(filterRecent);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+// fetchProducts();
+
+// fetchProducts();
+//rendering variables to index.ejs
+const sendRequestToHomepage = () => {
+  fetchProducts();
+  updateOffers();
+  app.get("/", (req, res) => {
+    res.render("index", { offers, featuredProducts, recentProducts });
+  });
+};
+sendRequestToHomepage();
