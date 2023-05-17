@@ -7,6 +7,9 @@
   position: fixed;
 
 } */
+.logo{
+  color: #fff;
+}
 header{
   background: #417393;
   padding: 0.4rem 0.6rem;
@@ -166,4 +169,14 @@ header{
   }
   .order-product:hover{
     transform: scale(1.07) !important;
+  }
+
+  .product-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .product-container img{
+    max-width: 100%;
   }

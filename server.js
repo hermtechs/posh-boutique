@@ -97,3 +97,7 @@ const sendRequestToHomepage = () => {
   });
 };
 sendRequestToHomepage();
+
+app.get("/product", (req, res) => {
+  res.render("product");
+});
