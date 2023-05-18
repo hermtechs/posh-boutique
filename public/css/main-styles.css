@@ -1,12 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap'); */
+
 *, ::after, ::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* nav{
-  position: fixed;
-
-} */
 .logo{
   color: #fff;
 }
@@ -169,14 +167,4 @@ header{
   }
   .order-product:hover{
     transform: scale(1.07) !important;
-  }
-
-  .product-container{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .product-container img{
-    max-width: 100%;
   }

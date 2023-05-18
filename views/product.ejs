@@ -6,34 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/main-styles.css">
     <script src="https://kit.fontawesome.com/451579efa6.js" crossorigin="anonymous"></script>
-    <title></title>
+    <title>Product</title>
 </head>
 <body>
-    <header>
-        <h4 class="logo">POSH BOUTIQUE</h4>
-        <nav>
-            <input type="checkbox" id="active">
-            <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
-            <div class="wrapper">
-              <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact us</a></li>
-        </ul>
-        </div>
-        </nav>
-     </header>
 <div class="product-container">
-    <img src="/public/img/product-1.jpg" alt="">
-    <h3 class="name">T-shirt</h3>
-    <div class="price">
-        <span>20,000 shs</span>
-
-    </div>
-
+ 
+    <div class="card">
+        <img src="/public/img/product-2.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>Tailored Jeans</h1>
+        <p class="price">$19.99</p>
+        <p><button>
+        <a href="#"> Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
+        </button></p>
+      </div>
 </div>    
+    <div class="btn-back-home">
+    <a href="/" class="btn-back-home">Back to Home <i class="fa fa-home" aria-hidden="true"></i></a>
+    </div>   
+<style>
+.product-container{
+    margin-top: 2rem;
+    position: relative;
+}
+.card {
+    padding: 1rem;
+    margin-top: 5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    /* background-color: #000; */
+    background: rgb(64, 27, 226);
+
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  .card button a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  .btn-back-home{
+    grid-template-columns: 1fr;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  .btn-back-home a{
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    background: rgb(64, 27, 226);
+    color: #ffff;
+    margin: 2rem;
+    max-width: 300px;
+    padding: 0.5rem;
+    border-radius:0.2em;
+  }
+  
+  </style>
 
 </body>
 </html>
