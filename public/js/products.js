@@ -46,6 +46,6 @@ const updateProductDOM = (
   productPhotoElement.src = imageUrl;
   productPriceElement.innerText = productCurrentPrice;
   productNameElement.innerText = productName;
-  orderBtnElement.href = `https://wa.me/97470923424?text=Hello,%20I%20would%20like%20to%20buy%20this%20product%20from%20your%20website%20https://poshboutiqueug.com/products/${selectedProductId}`;
+  orderBtnElement.href = `https://wa.me/97470923424?text=Hello,%20I%20would%20like%20to%20buy%20this%20product%20from%20your%20website%20https://poshboutiqueug.onrender.com/products/${selectedProductId}`;
   titleTag.innerText = productName;
 };
