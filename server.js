@@ -35,17 +35,6 @@ client
   )
   .catch((err) => console.log(err));
 
-// creating a route for each product based on it's contentful entry id
-function getRequestforEachRoute() {
-  let routes = [...allEntryIdsArray];
-  routes.forEach((route) => {
-    // console.log(route);
-    app.get(`/${route}`, (req, res) => {
-      res.send(`<h1>The entry id is ${route}`);
-    });
-  });
-}
-
 //update offers part
 const updateOffers = async () => {
   await client.getEntries({ content_type: "offers2" }).then((response) => {
@@ -98,6 +87,17 @@ const sendRequestToHomepage = () => {
 };
 sendRequestToHomepage();
 
-app.get("/product", (req, res) => {
-  res.render("product");
-});
+// app.get("/product", (req, res) => {
+//   res.render("product");
+// });
+// creating a route for each product based on it's contentful entry id
+function getRequestforEachRoute() {
+  let routes = [...allEntryIdsArray];
+  routes.forEach((route) => {
+    // console.log(route);
+    app.get(`/products/${route}`, (req, res) => {
+      res.render("product");
+    });
+  });
+}
+getRequestforEachRoute();

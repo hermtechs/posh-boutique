@@ -9,7 +9,10 @@ const productPriceElement = document.querySelector(".price-value");
 const orderBtnElement = document.querySelector(".product-photo");
 const productNameElement = document.querySelector(".product-name");
 
-const selectedProductId = "EcnvJFc7rInJCRniYFcmD";
+//getting product id from path
+const urlPath = window.location.pathname.split("/")[2];
+
+const selectedProductId = urlPath;
 document.addEventListener("DOMContentLoaded", () => {
   getProducts();
 });

@@ -302,7 +302,7 @@
                 <% const {productName,productPhoto,productCurrentPrice,productOldPrice}=prod.fields ;%>
                  <% const { url } = productPhoto.fields.file; %>
                  <% const imageUrl = `https:${url}` %>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%productId %>">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%=productId %>">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="<%=imageUrl  %>" alt="">
@@ -352,10 +352,11 @@
             <div class="row px-xl-5">
                 <% recentProducts[0].forEach(prod=>{ %>
                     <% const productId = prod.sys.id %>
+                    
                     <% const {productName,productPhoto,productCurrentPrice,productOldPrice}=prod.fields ;%>
                      <% const { url } = productPhoto.fields.file; %>
                      <% const imageUrl = `https:${url}` %>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%productId %>">
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%=productId %>">
                     <div class="product-item bg-light mb-4">
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="<%=imageUrl  %>" alt="">
