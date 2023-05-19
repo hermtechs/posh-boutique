@@ -6,7 +6,7 @@ const client = contentful.createClient({
 
 const productPhotoElement = document.querySelector(".product-photo");
 const productPriceElement = document.querySelector(".price-value");
-const orderBtnElement = document.querySelector(".product-photo");
+const orderBtnElement = document.querySelector(".order-btn");
 const productNameElement = document.querySelector(".product-name");
 
 //getting product id from path
@@ -45,5 +45,5 @@ const updateProductDOM = (
   productPhotoElement.src = imageUrl;
   productPriceElement.innerText = productCurrentPrice;
   productNameElement.innerText = productName;
-  orderBtnElement.href = `https://${selectedProductId}`;
+  orderBtnElement.href = `https://wa.me/97470923424?text=Hello,%20I%20would%20like%20to%20buy%20this%20product%20from%20your%20website%20https://poshboutiqueug.com/products/${selectedProductId}`;
 };
