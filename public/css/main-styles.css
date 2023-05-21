@@ -117,6 +117,10 @@ nav h3{
   .categories h6{
     color: #6c757d;
   }
+.categories-link:hover .categories-txt h6, .categories-link:hover .categories-txt small{
+  color: #ffff !important;
+}
+
   .section-title span{
     color: #000;
   }
@@ -126,6 +130,7 @@ nav h3{
   .products h5 ,.featured-products h5{
     color: #000;
   }
+
   small{
     color: #000;
   }
@@ -133,7 +138,7 @@ nav h3{
     display: inline-block;
     font-size: 1.1rem;
     color: #ffff;
-    background: #401be2;
+    background: #d01345;
     padding: 0.4rem 1rem;
     border-radius: 1.2rem;
     transition:  100ms ease-in;
@@ -144,6 +149,7 @@ nav h3{
   .order-product:hover{
     transform: scale(1.07) !important;
   }
+  
 
   /* make side menu disappear on big screens if open */
 @media(min-width:800px){
@@ -347,7 +353,7 @@ nav h3{
 .contact_us_green .submit-btn {
   min-width: 290px;
   height: 60px;
-  background-color: #401be2;
+  background-color: #13d052;
   font-size: 18px;
   font-weight: 700;
   color: #fff;

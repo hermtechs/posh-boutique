@@ -24,6 +24,7 @@ const allEntryIdsArray = [];
 let featuredProducts = [];
 let offers = [];
 let recentProducts = [];
+let categories = [];
 
 client
   .getEntries()
@@ -74,15 +75,28 @@ const fetchProducts = async () => {
       console.log(err);
     });
 };
-// fetchProducts();
 
+//fetching categories from contentful
+const fetchCategories = async () => {
+  await client.getEntries({ content_type: "categories" }).then((response) => {
+    const content_type_categories = response.items;
+    categories.push(content_type_categories);
+  });
+};
 // fetchProducts();
 //rendering variables to index.ejs
 const sendRequestToHomepage = () => {
   fetchProducts();
   updateOffers();
+  fetchCategories();
+
   app.get("/", (req, res) => {
-    res.render("index", { offers, featuredProducts, recentProducts });
+    res.render("index", {
+      offers,
+      featuredProducts,
+      recentProducts,
+      categories,
+    });
   });
 };
 sendRequestToHomepage();
