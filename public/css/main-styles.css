@@ -29,6 +29,9 @@ nav{
   position: relative;
   text-align: center;
 }
+.side-links a{
+  color: #ffff;
+}
 /* .nav-links{
   display: grid;
   grid-template-columns: 4.8fr 1fr;
