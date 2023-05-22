@@ -147,7 +147,6 @@
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
             <% categories[0].forEach(category=>{ %>
-                <% console.log(categories[0]) %>
             <%   const {categoryName, categoryPhoto}=category.fields; %>
             <% const { url } = categoryPhoto.fields.file; %>
             <% const imageUrl = `https:${url}` %>
@@ -192,7 +191,6 @@
                             <h5>shs.<%=productCurrentPrice  %></h5><h6 class="text-muted ml-2"><del><%=productOldPrice %></del></h6>
                         </div>
                     <a href="#" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
-
                     </div>
                 </div>
             </div>
@@ -256,105 +254,104 @@
         </div>
         <!-- Products End -->
     </section>
-
-    <section class="contact-us" id="contact">
-        <div class="contact_us_green">
-            <div class="responsive-container-block big-container">
-              <div class="responsive-container-block container">
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b-2">
-                  <form class="form-box">
-                    <div class="container-block form-wrapper">
-                      <div class="head-text-box">
-                        <p class="text-blk contactus-head" style="text-align:center;">
-                          Contact us
-                        </p>
-                      </div>
-                      <div class="responsive-container-block">
-                        <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6" id="i10mt-6">
-                          <p class="text-blk input-title">
-                            First Name*
-                          </p>
-                          <input required type="text" class="input" id="ijowk-6" name="FirstName">
-                        </div>
-                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-                          <p class="text-blk input-title">
-                            Last Name*
-                          </p>
-                          <input required type="text" class="input" id="indfi-4" name="Last Name">
-                        </div>
-                        <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-                          <p class="text-blk input-title">
-                            Phone Number*
-                          </p>
-                          <input required type="number" class="input" id="imgis-5" name="PhoneNumber">
-                        </div>
-                        <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-6">
-                          <p class="text-blk input-title">
-                            What do you have in mind ?*
-                          </p>
-                          <textarea required class="textinput" id="i5vyy-6" placeholder="Please enter query..."></textarea>
-                        </div>
-                      </div>
-                      <div class="btn-wrapper">
-                        <button type="submit" class="submit-btn">
-                          Submit
-                        </button>
-                      </div>
+</main> 
+<section class="contact-us" id="contact">
+    <div class="contact_us_green">
+        <div class="responsive-container-block big-container">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b-2">
+              <form class="form-box">
+                <div class="container-block form-wrapper">
+                  <div class="head-text-box">
+                    <p class="text-blk contactus-head" style="text-align:center;">
+                      Contact us
+                    </p>
+                  </div>
+                  <div class="responsive-container-block">
+                    <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6" id="i10mt-6">
+                      <p class="text-blk input-title">
+                        First Name*
+                      </p>
+                      <input required type="text" class="input" id="ijowk-6" name="FirstName">
                     </div>
-                  </form>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <p class="text-blk input-title">
+                        Last Name*
+                      </p>
+                      <input required type="text" class="input" id="indfi-4" name="Last Name">
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <p class="text-blk input-title">
+                        Phone Number*
+                      </p>
+                      <input required type="number" class="input" id="imgis-5" name="PhoneNumber">
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-6">
+                      <p class="text-blk input-title">
+                        What do you have in mind ?*
+                      </p>
+                      <textarea required class="textinput" id="i5vyy-6" placeholder="Please enter query..."></textarea>
+                    </div>
+                  </div>
+                  <div class="btn-wrapper">
+                    <button type="submit" class="submit-btn">
+                      Submit
+                    </button>
+                  </div>
                 </div>
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-10" id="ifgi">
-                  <div class="container-box">
-                    <div class="text-content">
-                      <p class="text-blk contactus-head">
-                        Contact us
+              </form>
+            </div>
+            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-10" id="ifgi">
+              <div class="container-box">
+                <div class="text-content">
+                  <p class="text-blk contactus-head">
+                    Contact us
+                  </p>
+                </div>
+                <div class="workik-contact-bigbox">
+                  <div class="workik-contact-box">
+                    <div class="phone text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
+                      <p class="contact-text">
+                      <a href="tel:+97470923424">+1258 3258 5679</a>  
                       </p>
                     </div>
-                    <div class="workik-contact-bigbox">
-                      <div class="workik-contact-box">
-                        <div class="phone text-box">
-                          <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET21.jpg">
-                          <p class="contact-text">
-                          <a href="tel:+97470923424">+1258 3258 5679</a>  
-                          </p>
-                        </div>
-                        <div class="address text-box">
-                          <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
-                          <p class="contact-text">
-                           <a href="mailto:hello@poshboutiqueug.com">hello@poshboutiqueug.com</a> 
-                          </p>
-                        </div>
-                        <div class="mail text-box">
-                          <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
-                          <p class="contact-text">
-                            102 street, y cross 485656
-                          </p>
-                        </div>
-                      </div>
-                      <div class="social-media-links">
-                        <a href="">
-                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                          <img class="social-svg" id="i706n" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg">
-                        </a>
-                        <a href="">
-                          <img class="social-svg" id="ib9ve" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg">
-                        </a>
-                        <a href="">
-                          <img class="social-svg" id="ie9fx" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg">
-                        </a>
-                      </div>
+                    <div class="address text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET22.jpg">
+                      <p class="contact-text">
+                       <a href="mailto:hello@poshboutiqueug.com">hello@poshboutiqueug.com</a> 
+                      </p>
                     </div>
+                    <div class="mail text-box">
+                      <img class="contact-svg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET23.jpg">
+                      <p class="contact-text">
+                        102 street, y cross 485656
+                      </p>
+                    </div>
+                  </div>
+                  <div class="social-media-links">
+                    <a href="">
+                        <i class="fa fa-whatsapp icon-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-twitter icon-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-instagram icon-instagram" aria-hidden="true"></i>  
+                    </a>
+                    <a href="">
+                        <i class="fa fa-facebook icon-facebook" aria-hidden="true"></i>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
 
-    </section>
-</main> 
+</section>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

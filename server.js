@@ -25,6 +25,7 @@ let featuredProducts = [];
 let offers = [];
 let recentProducts = [];
 let categories = [];
+const allProducts = [];
 
 client
   .getEntries()
@@ -115,3 +116,22 @@ function getRequestforEachRoute() {
   });
 }
 getRequestforEachRoute();
+
+//getting all products and rendering to shop
+const getAllProducts = async () => {
+  await client
+    .getEntries({ content_type: "products" })
+    .then((res) => {
+      const allProducts = res.items;
+      app.get("/shop", (req, res) => {
+        res.render("shop", { allProducts });
+      });
+    })
+    .catch((err) => console.log(err));
+};
+getAllProducts();
+
+//get request to contact me page
+app.get("contact", (req, res) => {
+  res.render("contact");
+});

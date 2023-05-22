@@ -537,6 +537,19 @@ nav h3{
   color: #040303;
   font-size: 1.85rem
 }
+.contact-us .icon-whatsapp{
+color:  #1bd05d;
+}
+.contact-us .icon-twitter{
+  color: #1DA1F2;
+}
+.contact-us .icon-facebook{
+  color: #1778F2;
+}
+.contact-us .icon-instagram{
+  color:  #962fbf;
+}
+
 
 .wk-desk-1 {
   width: 8.333333%;
