@@ -26,7 +26,7 @@
             <div class="nav-links">
              <div class="links">
                 <a href="#contact">Contact us</a>
-                <a href="#shop">Shop</a>
+                <a href="/shop">Shop</a>
                 <a href="/offers">Offers</a>
                 <a href="#categories">Categories</a>
              </div>  
@@ -152,7 +152,8 @@
             <% const imageUrl = `https:${url}` %>
 
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none categories-link" href="">
+                <a class="text-decoration-none categories-link" 
+                href="/categories/<%=category.sys.id %>">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
                             <img class="img-fluid" src="<%=imageUrl  %>" alt="">

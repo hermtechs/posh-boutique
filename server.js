@@ -20,12 +20,15 @@ const client = contentful.createClient({
   accessToken: "dwhouqiLZE7TM9bjII1u52irpIOZolnWiBk59dN8kmQ",
 });
 
+//arrays storing sorted data after api calls
 const allEntryIdsArray = [];
 let featuredProducts = [];
 let offers = [];
 let recentProducts = [];
 let categories = [];
 const allProducts = [];
+const allCategoryIds = [];
+const allCategoryNames = [];
 
 client
   .getEntries()
@@ -135,3 +138,21 @@ getAllProducts();
 app.get("contact", (req, res) => {
   res.render("contact");
 });
+
+//categories section
+//get each category id and create a route with each item sys.id as the endpoint
+const getAllCategoryIds = async () => {
+  await client.getEntries({ content_type: "categories" }).then((res) => {
+    const allItems = res.items;
+    allItems.forEach((item) => {
+      allCategoryIds.push(item.sys.id);
+    });
+  });
+  // createRouteBasedOnId();
+  allCategoryIds.forEach((categoryId) => {
+    app.get(`/categories/${categoryId}`, (req, res) => {
+      res.render("categories");
+    });
+  });
+};
+getAllCategoryIds();
