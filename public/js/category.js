@@ -3,6 +3,27 @@ const client = contentful.createClient({
   environment: "master", // defaults to 'master' if not set
   accessToken: "dwhouqiLZE7TM9bjII1u52irpIOZolnWiBk59dN8kmQ",
 });
+//navingation
+const navbars = document.querySelector(".nav-bars");
+const smallLinksContainer = document.querySelector(".side-menu-links");
+const sideMenulinks = document.querySelectorAll(".side-links a");
+
+navbars.addEventListener("click", () => {
+  if (navbars.classList.contains("rotate")) {
+    navbars.classList.remove("rotate");
+    smallLinksContainer.classList.add("show-mobile-menu");
+  } else {
+    navbars.classList.add("rotate");
+    smallLinksContainer.classList.remove("show-mobile-menu");
+  }
+});
+
+sideMenulinks.forEach((link) =>
+  link.addEventListener("click", () => {
+    navbars.classList.remove("rotate");
+    smallLinksContainer.classList.add("show-mobile-menu");
+  })
+);
 
 const categoryTitle = document.querySelector(".category-title");
 const categoryItemsContainer = document.querySelector(
@@ -41,14 +62,14 @@ const getCorrespondingProducts = (allProducts, categoryName) => {
   const correspondingProducts = allProducts.filter((prod) => {
     return prod.fields.productCategory[0] == categoryName;
   });
-  itemsInCategory.push(correspondingProducts);
-  updateDOM();
+
+  updateDOM(correspondingProducts);
 };
 
 //updating dom with products in clicked category
-function updateDOM() {
-  const categoryProductsHTML = itemsInCategory.map((item) => {
-    console.log(item);
+function updateDOM(correspondingProducts) {
+  const categoryProductsHTML = correspondingProducts.map((item) => {
+    // console.log(item);
     const { productPhoto, productCurrentPrice, productOldPrice, productName } =
       item.fields;
     const { url } = productPhoto.fields.file;

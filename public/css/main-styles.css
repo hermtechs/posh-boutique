@@ -123,7 +123,9 @@ nav h3{
 .categories-link:hover .categories-txt h6, .categories-link:hover .categories-txt small{
   color: #ffff !important;
 }
-
+ .category-name{
+  text-transform: capitalize;
+ }
   .section-title span{
     color: #000;
   }
