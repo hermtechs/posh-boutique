@@ -122,12 +122,13 @@ getRequestforEachRoute();
 
 //getting all products and rendering to shop
 const getAllProducts = async () => {
+  fetchCategories();
   await client
     .getEntries({ content_type: "products" })
     .then((res) => {
       const allProducts = res.items;
       app.get("/shop", (req, res) => {
-        res.render("shop", { allProducts });
+        res.render("shop", { allProducts, categories });
       });
     })
     .catch((err) => console.log(err));
@@ -142,6 +143,7 @@ app.get("contact", (req, res) => {
 //categories section
 //get each category id and create a route with each item sys.id as the endpoint
 const getAllCategoryIds = async () => {
+  fetchCategories(); //getting entire categories array from contentful to render it to our views
   await client.getEntries({ content_type: "categories" }).then((res) => {
     const allItems = res.items;
     allItems.forEach((item) => {
@@ -151,7 +153,7 @@ const getAllCategoryIds = async () => {
   // createRouteBasedOnId();
   allCategoryIds.forEach((categoryId) => {
     app.get(`/categories/${categoryId}`, (req, res) => {
-      res.render("categories");
+      res.render("categories", { categories });
     });
   });
 };

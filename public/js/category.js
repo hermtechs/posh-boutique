@@ -84,7 +84,9 @@ function updateDOM(correspondingProducts) {
       <div class="text-center py-4">
           <h6 class="h6 text-decoration-none text-truncate product-name">${productName}</h6>
           <div class="d-flex align-items-center justify-content-center mt-2">
-              <h5>shs.${productCurrentPrice}</h5><h6 class="text-muted ml-2"><del>${productOldPrice}</del></h6>
+              <h5>shs.${productCurrentPrice}</h5><h6 class="text-muted ml-2"><del>${
+      productOldPrice != undefined ? productOldPrice : ""
+    }</del></h6>
           </div>
       <a href="https://wa.me/97470923424?text=Hello,%20I%20would%20like%20to%20buy%20this%20product%20from%20your%20website%20https://poshboutiqueug.onrender.com/products/${productId}" class="order-product">Order <i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
       </div>
