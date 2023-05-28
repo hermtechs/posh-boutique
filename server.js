@@ -4,6 +4,7 @@ const contentful = require("contentful");
 
 const { response } = require("express");
 const { url } = require("inspector");
+const { get } = require("http");
 const app = express();
 app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
@@ -113,9 +114,7 @@ function getRequestforEachRoute() {
   let routes = [...allEntryIdsArray];
   routes.forEach((route) => {
     // console.log(route);
-    app.get(`/products/${route}`, (req, res) => {
-      res.render("product");
-    });
+    app.get(`/products/${route}`, (req, res) => res.render("product"));
   });
 }
 getRequestforEachRoute();
@@ -127,18 +126,13 @@ const getAllProducts = async () => {
     .getEntries({ content_type: "products" })
     .then((res) => {
       const allProducts = res.items;
-      app.get("/shop", (req, res) => {
-        res.render("shop", { allProducts, categories });
-      });
+      app.get("/shop", (req, res) =>
+        res.render("shop", { allProducts, categories })
+      );
     })
     .catch((err) => console.log(err));
 };
 getAllProducts();
-
-//get request to contact me page
-app.get("contact", (req, res) => {
-  res.render("contact");
-});
 
 //categories section
 //get each category id and create a route with each item sys.id as the endpoint
@@ -146,15 +140,29 @@ const getAllCategoryIds = async () => {
   fetchCategories(); //getting entire categories array from contentful to render it to our views
   await client.getEntries({ content_type: "categories" }).then((res) => {
     const allItems = res.items;
-    allItems.forEach((item) => {
-      allCategoryIds.push(item.sys.id);
-    });
+    allItems.forEach((item) => allCategoryIds.push(item.sys.id));
   });
   // createRouteBasedOnId();
   allCategoryIds.forEach((categoryId) => {
-    app.get(`/categories/${categoryId}`, (req, res) => {
-      res.render("categories", { categories });
-    });
+    app.get(`/categories/${categoryId}`, (req, res) =>
+      res.render("categories", { categories })
+    );
+    ``;
   });
 };
 getAllCategoryIds();
+
+//creating a route @contact.ejs //get request to contact me page
+
+app.get("/contact", (req, res) => res.render("contact", { categories }));
+
+const getOffers = async () => {
+  fetchCategories();
+  await client.getEntries({ content_type: "offers2" }).then((res) => {
+    const offers = res.items;
+    app.get("/offers", (req, res) =>
+      res.render("offers", { offers, categories })
+    );
+  });
+};
+getOffers();

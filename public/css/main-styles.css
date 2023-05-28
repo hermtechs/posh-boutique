@@ -22,6 +22,9 @@ header{
   background: #0f0f0f;
   z-index: 1000;
 }
+a{
+  text-decoration: none;
+}
 nav{
   display: flex;
   align-items: center;
@@ -31,6 +34,10 @@ nav{
   color: #fff;
   position: relative;
   text-align: center;
+}
+nav a{
+  color: #fff;
+  text-decoration: none;
 }
 .side-links a{
   color: #ffff;
@@ -154,12 +161,18 @@ nav h3{
   .order-product:hover{
     transform: scale(1.07) !important;
   }
-  
 
   /* make side menu disappear on big screens if open */
 @media(min-width:800px){
   .side-menu-links{
   transform: translateX(-100%);
+  }
+  .products .img-fluid, 
+  .featured-products .img-fluid, 
+  .recent-products .img-fluid{
+    height: 100%;
+    max-height: 350px;
+    object-fit:cover;
   }   
 }
 
@@ -176,7 +189,7 @@ nav h3{
 
 /* contact us section start */
 .contact-us{
-  background: #9CF0E0;;
+  background: #5ae4cb;
 }
 .contact_us_green * {
   font-family: Nunito, sans-serif;

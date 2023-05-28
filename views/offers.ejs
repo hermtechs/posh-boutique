@@ -25,20 +25,18 @@
             </div>  
             <div class="nav-links">
              <div class="links">
-                <a href="#contact">Contact us</a>
-                <a href="#shop">Shop</a>
+                <a href="/contact">Contact us</a>
+                <a href="/shop">Shop</a>
                 <a href="/offers">Offers</a>
-                <a href="#categories">Categories</a>
              </div>  
             </div>  
         </nav>
         <div class="side-menu-links show-mobile-menu">
             <div class="side-bar">
                 <div class="side-links">
-                    <a href="#shop">Shop</a>
+                    <a href="/shop">Shop</a>
                     <a href="/offers">Offers</a>
-                    <a href="#categories">Categories</a>
-                    <a href="#contact">Contact us</a>
+                    <a href="/contact">Contact us</a>
                 </div>  
                </div>  
 
@@ -46,15 +44,15 @@
     </header>
 
 <main>
-    <section class="featured-products" id="all-shop">    
+    <section class="products" id="all-shop">    
         <!-- Products Start -->
         <div class="container-fluid pt-5 pb-3">
             <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">POSH BOUTIQUE</span></h2>
             <div class="row px-xl-5">
-                <% allProducts.forEach(prod=>{ %>
+                <% offers.forEach(prod=>{ %>
                     <% const productId = prod.sys.id %>
-                    <% const {productName,productPhoto,productCurrentPrice,productOldPrice}=prod.fields ;%>
-                     <% const { url } = productPhoto.fields.file; %>
+                    <% const {productName,backgroundImage,productCurrentPrice,productOldPrice}=prod.fields ;%>
+                     <% const { url } = backgroundImage.fields.file; %>
                      <% const imageUrl = `https:${url}` %>
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1" id="<%=productId %>">
                     <div class="product-item bg-light mb-4">
@@ -76,6 +74,93 @@
         <!-- Products End -->
     </section>
 </main>    
+<section class="footer">
+    <!--footer-->
+<footer class="kilimanjaro_area">
+<!-- Top Footer Area Start -->
+<div class="foo_top_header_one section_padding_100_70">
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="kilimanjaro_part">
+                <h5>About Us</h5>
+              <p>  Posh Boutique Ug is an online clothing store that sells stylish and affordable women's clothing in Kampala, Uganda.
+                 We offer a wide variety of styles and sizes to fit every taste and body type, including dresses, skirts, tops, pants,jewerly and accessories.
+                </p> 
+
+               <p> We're committed to providing our customers with the best possible shopping experience. </p>
+                <p>We're proud to be a part of the Kampala community and we're committed to supporting local businesses.</p> 
+                <p>We're always looking for new ways to improve our business and we're always listening to our customers'  <a href="#contact" style="color: rgb(65, 200, 65);">feedback</a>.
+                
+                Thank you for choosing Posh Boutique!</p>
+            </div>
+            <div class="kilimanjaro_part m-top-15">
+                <h5>Social Links</h5>
+                <ul class="kilimanjaro_social_links">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="kilimanjaro_part">
+                <h5>Categories</h5>
+                <ul class=" kilimanjaro_widget">
+                    <% categories[0].forEach(category=>{ %>
+
+                        <%   const {categoryName, categoryPhoto}=category.fields; %>
+                        <% const { url } = categoryPhoto.fields.file; %>
+                        <% const imageUrl = `https:${url}` %>
+                        <li><a href="/categories/<%=category.sys.id%>"><%=categoryName%></a></li>
+                  <% }) %>                 
+                </ul>
+            </div>
+
+            <div class="kilimanjaro_part m-top-15">
+                <h5>Important Links</h5>
+                <ul class="kilimanjaro_links">
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms & Conditions</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>About Licences</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Help & Support</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Careers</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Community & Forum</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="kilimanjaro_part">
+               </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="kilimanjaro_part">
+                <h5>Quick Contact</h5>
+                <div class="kilimanjaro_single_contact_info">
+                    <h5>Phone:</h5>
+                    <p>+256 255 54 53 52 <br> +256 255 53 52 51</p>
+                </div>
+                <div class="kilimanjaro_single_contact_info">
+                    <h5>Email:</h5>
+                    <p>support@email.com <br> company@email.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Footer Bottom Area Start -->
+<div class=" kilimanjaro_bottom_header_one section_padding_50 text-center">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p>© All Rights Reserved. <a href="#">Posh Boutique Uganda<i class="fa fa-love"></i></a></p>
+        </div>
+    </div>
+</div>
+</div>
+</footer>
 
 <script src="/public/js/index.js"></script>
 
