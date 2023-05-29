@@ -118,6 +118,22 @@ nav h3{
   min-height: 400px;
 }
 /* end of navigation */
+
+/* landing page start  */
+
+.carousel-inner h1,
+.carousel-inner h2{
+  font-size: clamp(1.5rem, -1.6rem + 5vw, 2.1rem);
+  line-height: 1;
+  padding-bottom: 1rem;
+  color: #e4d0e2;
+  background: -webkit-linear-gradient(#e4d0e2, #26e3c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* landing page end */
   main{
     padding-top: 3.1rem;
   }
@@ -189,7 +205,7 @@ nav h3{
 
 /* contact us section start */
 .contact-us{
-  background: #5ae4cb;
+  background: #0d8972;
 }
 .contact_us_green * {
   font-family: Nunito, sans-serif;
